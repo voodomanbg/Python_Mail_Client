@@ -46,7 +46,7 @@ class Main_Page:
         self.label_pass.grid(row=0, column=1, sticky=E)
 
         self.google_password = StringVar()
-        self.google_password.set("")
+        self.google_password.set("") # you can insert your pass here
         self.entry_password = Entry(self.frame, show="*", textvariable=self.google_password)
         self.entry_password.grid(row=0, column=2, padx=10, ipadx=70, ipady=3, sticky=EW)
 
@@ -420,7 +420,8 @@ class Mail_getter:
     def get_mails_from_gmail(self):
         self.server = "imap.gmail.com"
         self.username = "voodomanbg@gmail.com"
-        self.pasword = "ochu ojcc lful xexj"
+        self.password = self.app.password
+        #self.password = "insert your pass here"
         self.new_con = sl.connect('Email_Container.db')
         sql_add = 'INSERT INTO Emails ("From", "To", "Subject", "Date", "Body") VALUES (?,?,?,?,?)'
         sql_remove = 'DELETE from Emails'
